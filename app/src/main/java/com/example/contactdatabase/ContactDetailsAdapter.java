@@ -151,6 +151,7 @@ public class ContactDetailsAdapter extends RecyclerView.Adapter<ContactDetailsAd
 
     // Delete selected contacts from the database
     public void deleteSelectedContacts(DatabaseHelper db) {
+        Log.d("ContactDetailsAdapter", "Deleting selected contacts: " + selectedContacts.size());
         for (int i = 0; i <= selectedContacts.size() - 1; i++) {
             int position = selectedContacts.get(i);
             db.deleteContactById(contacts.get(position).getId());

@@ -228,7 +228,7 @@ public class ContactActivity extends AppCompatActivity {
     // Save contact details to the database
     private void saveContactDetails() {
         if (!validateRequiredFields()) {
-            Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Fail to add contact", Toast.LENGTH_LONG).show();
             return;
         }
 

@@ -54,15 +54,16 @@ public class ContactDetailsActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.contactListToolbar);
         setSupportActionBar(toolbar);
 
+        // Get the contact details from the database and displays it
+        dbHelper = new DatabaseHelper(this);
+
+        ArrayList<Contact> contacts = dbHelper.getAllContacts();
+
         // Get the RecyclerView from the layout
         recyclerView = findViewById(R.id.contactRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.requestLayout();
 
-        // Get the contact details from the database and displays it
-        dbHelper = new DatabaseHelper(this);
-
-        ArrayList<Contact> contacts = dbHelper.getAllContacts();
         contactDetailsAdapter = new ContactDetailsAdapter(contacts);
         recyclerView.setAdapter(contactDetailsAdapter);
 
