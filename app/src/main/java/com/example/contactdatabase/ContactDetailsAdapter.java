@@ -49,7 +49,6 @@ public class ContactDetailsAdapter extends RecyclerView.Adapter<ContactDetailsAd
 
             // Set the avatar based on the stored avatar number
             int avatarNumber = contact.getAvatarId();
-            String avatarResourceName = "avatar_" + avatarNumber;
             int index = avatarNumber - 1;
 
             if (index >= 0 && index < AvatarConstants.AVATAR_RESOURCES.length) {
